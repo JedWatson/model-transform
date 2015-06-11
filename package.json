@@ -1,0 +1,26 @@
+{
+  "name": "model-tojson",
+  "version": "0.0.0",
+  "description": "Common toJSON Transform for KeystoneJS / Mongoose Models",
+  "main": "index.js",
+  "author": "Jed Watson",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/JedWatson/model-tojson.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JedWatson/model-tojson/issues"
+  },
+  "homepage": "https://github.com/JedWatson/model-tojson",
+  "scripts": {
+    "test": "echo \"no tests yet\" && exit 0"
+  },
+  "keywords": [
+    "keystone",
+    "keystonejs",
+    "mongoose",
+    "transform",
+    "json"
+  ]
+}
