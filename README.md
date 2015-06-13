@@ -2,6 +2,45 @@
 
 Common toJSON Transform for KeystoneJS / Mongoose Models.
 
+Automatically renames `_id` to `id`, removes `__v` and can optionally run an additional transform.
+
+The transform method may return a new object, or modify the provided one by reference.
+
+## Usage
+
+```
+npm install model-transform --save
+```
+
+```js
+var keystone = require('keystone');
+var transform = require('model-transform');
+
+var User = new keystone.List('User');
+User.add({
+	/* fields */
+	// add a field you never want included in JSON data
+	somethingPrivate: String
+});
+
+// add a virtual that you always want included in JSON data
+User.schema.virtual('includeMe').get(function() {
+	return true;
+});
+
+transform.toJSON(User, function(doc, rtn) {
+	// add individual virtual properties
+	rtn.includeMe = doc.includeMe;
+	// delete private properties
+	delete rtn.somethingPrivate;
+	// return is optional becuase we've modified rtn by reference
+	// return rtn;
+});
+
+User.register();
+```
+
+
 # License
 
 The MIT License (MIT)
