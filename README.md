@@ -1,4 +1,4 @@
-# model-tojson
+# model-transform
 
 Common toJSON Transform for KeystoneJS / Mongoose Models.
 
