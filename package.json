@@ -1,6 +1,6 @@
 {
   "name": "model-transform",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Common toJSON Transform for KeystoneJS / Mongoose Models",
   "main": "index.js",
   "author": "Jed Watson",
