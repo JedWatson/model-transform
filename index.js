@@ -11,4 +11,4 @@ function modelToJSON(schema, fn) {
 	}});
 }
 
-module.toJSON = modelToJSON;
+exports.toJSON = modelToJSON;
