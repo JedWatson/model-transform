@@ -6,7 +6,7 @@ function modelToJSON(schema, fn) {
 		delete rtn._id;
 		delete rtn.__v;
 		if (fn) {
-			var result = fn(doc, rtn, options);
+			var result = fn.call(doc, rtn, options);
 			if (result) rtn = result;
 		}
 		return rtn;
