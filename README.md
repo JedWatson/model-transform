@@ -6,6 +6,12 @@ Automatically renames `_id` to `id`, removes `__v` and can optionally run an add
 
 The transform method may return a new object, or modify the provided one by reference.
 
+## Changes from 1.x -> 2.x
+
+In `1.x`, the document object was the first argument of the transform function.
+
+In `2.0.0` and up, the document object is `this` and `rtn` is the first argument.
+
 ## Usage
 
 ```
@@ -28,9 +34,9 @@ User.schema.virtual('includeMe').get(function() {
 	return true;
 });
 
-transform.toJSON(User, function(doc, rtn) {
+transform.toJSON(User, function(rtn) {
 	// add individual virtual properties
-	rtn.includeMe = doc.includeMe;
+	rtn.includeMe = this.includeMe;
 	// delete private properties
 	delete rtn.somethingPrivate;
 	// return is optional becuase we've modified rtn by reference
